@@ -81,3 +81,9 @@ p{
 }
 
 .btn:hover::before{width: 250px; height: 250px;}
+
+#borrar{
+    right: revert;
+    left: 0;
+    margin-left: 10px;
+}

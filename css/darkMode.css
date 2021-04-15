@@ -46,6 +46,10 @@ table{
     margin:0 auto;
 }
 
+input[type=text]{
+
+}
+
 p{
     margin-top: 8vmin;
     font-size: 25px;
@@ -81,3 +85,13 @@ p{
 }
 
 .btn:hover::before{width: 250px; height: 250px;}
+
+#borrar{
+    right: revert;
+    left: 0;
+    margin-left: 10px;
+}
+
+a:hover{
+    cursor: pointer;
+}
