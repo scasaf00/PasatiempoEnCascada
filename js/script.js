@@ -27,3 +27,7 @@ var localStorage = false;
 function cookie(){
     localStorage = confirm("Esta pagina puede utilizar cookies propias para el guardado local de su pasatiempo.");
 }
+
+function borrarCookie(){
+
+}
