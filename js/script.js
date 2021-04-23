@@ -8,11 +8,18 @@ btn.addEventListener("mousemove", (e) =>{
     e.target.style.setProperty("--y", `${yPos}px`);
 });
 
+btn.addEventListener("onclick", (e) =>{
+    e.
+})
+
 function agora(){
     window.open("https://agora.unileon.es")
 }
 
 function cambiarTema(){
+
+
+
     let theme = document.getElementById("tema");
 
     if (theme.getAttribute("href") === "../css/darkMode.css"){
