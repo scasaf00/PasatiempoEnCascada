@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../css/dashboard.css">
     <title>Pasatiempo en cascada</title>
 </head>
-<body>
+<body onload="readDictionary()">
 <svg style="display:none;">
     <symbol id="logo" viewBox="0 0 140 59">
         <g>
@@ -141,7 +141,7 @@
 </header>
 <section class="page-content">
     <section class="grid">
-        <article>
+        <article class="table">
             <table>
                 <tr>
                     <td>
@@ -156,19 +156,8 @@
                     <td>
                         <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase();">
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <b style="font-size: 30px">1</b>
                     </td>
                 </tr>
                 <tr>
@@ -241,10 +230,30 @@
                         <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
                     </td>
                     <td>
+                        <b style="font-size: 30px">2</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
                     </td>
                     <td>
                         <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    </td>
+                    <td>
+                        <b style="font-size: 30px">3</b>
                     </td>
                 </tr>
                 <tr>
@@ -345,15 +354,22 @@
                     </td>
                     <td>
                         <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    </td>
+                    <td>
+                       <b style="font-size: 30px">4</b>
                     </td>
                 </tr>
             </table>
         </article>
-        <article>
+        <article class="searcher">
+            <textarea readonly id="counter"></textarea>
             <div class="field" id="searchform">
-                <input type="search" id="searchterm" placeholder="Ejemplo: CLOP" onkeyup="this.value=this.value.toUpperCase();" />
-                <button type="button" id="search">Pista</button>
+                <input type="search" id="searchterm" placeholder="Ejemplo: CLOP" onkeyup="this.value=this.value.toUpperCase(); if (event.keyCode === 13) searchClue()" />
+                <button type="button" id="search" onclick="searchClue()">Pista</button>
             </div>
+        </article>
+        <article class="clues">
+            <textarea readonly id="cluesArea"></textarea>
         </article>
         <article class="almostLast">
           <p>
