@@ -142,19 +142,19 @@
 <section class="page-content">
     <section class="grid">
         <article class="table">
-            <table>
+            <table id="pastime">
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase(); nextCell(0,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase(); nextCell(0,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase(); nextCell(0,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1"  onkeyup="this.value=this.value.toUpperCase(); nextCell(0,3);" onblur="checkWord(0);">
                     </td>
                     <td>
                         <b style="font-size: 30px">1</b>
@@ -162,72 +162,80 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(1,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(1,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(1,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(1,3);" onblur="checkWord(1);">
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    <td style="display: none">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(2,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(2,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(2,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(2,3);" onblur="checkWord(2);">
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    <td style="display: none">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(3,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(3,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(3,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(3,3);" onblur="checkWord(3);">
+                    </td>
+                    <td style="display: none">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(4,0);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(4,1);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(4,2);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(4,3);" onblur="checkWord(4);">
+                    </td>
+                    <td style="display: none">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(5,0);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(5,1);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(5,2);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(5,3);" onblur="checkWord(5);">
                     </td>
                     <td>
                         <b style="font-size: 30px">2</b>
@@ -235,22 +243,22 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(6,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(6,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(6,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(6,3);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(6,4);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(6,5);" onblur="checkWord(6);">
                     </td>
                     <td>
                         <b style="font-size: 30px">3</b>
@@ -258,102 +266,110 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(7,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(7,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(7,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(7,3);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(7,4);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(7,5);" onblur="checkWord(7);">
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    <td style="display: none">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(8,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(8,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(8,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(8,3);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(8,4);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(8,5);" onblur="checkWord(8);">
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
-                    </td>
-                    <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                    <td style="display: none">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(9,0);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(9,1);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(9,2);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(9,3);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(9,4);">
                     </td>
                     <td>
-                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase();">
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(9,5);" onblur="checkWord(9);">
+                    </td>
+                    <td style="display: none">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(10,0);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(10,1);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(10,2);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(10,3);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(10,4);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(10,5);" onblur="checkWord(10);">
+                    </td>
+                    <td style="display: none">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(11,0);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(11,1);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(11,2);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(11,3);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(11,4);">
+                    </td>
+                    <td>
+                        <input type="text" size="1" maxlength="1" onkeyup="this.value=this.value.toUpperCase(); nextCell(11,5);" onblur="checkWord(11);">
                     </td>
                     <td>
                        <b style="font-size: 30px">4</b>
