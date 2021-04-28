@@ -40,21 +40,28 @@ for (const link of menuLinks) {
 if (localStorage.getItem("dark-mode") === "false") {
     html.classList.add(lightModeClass);
     switchInput.checked = false;
-    switchLabelText.textContent = "Light";
+    switchLabelText.textContent = "Claro";
 }
 
+let localStoragePermission = false;
 switchInput.addEventListener("input", function () {
     html.classList.toggle(lightModeClass);
     if (html.classList.contains(lightModeClass)) {
-        switchLabelText.textContent = "Light";
-        localStorage.setItem("dark-mode", "false");
+        switchLabelText.textContent = "Claro";
+        if(localStoragePermission)
+            localStorage.setItem("dark-mode", "false");
     } else {
-        switchLabelText.textContent = "Dark";
-        localStorage.setItem("dark-mode", "true");
+        switchLabelText.textContent = "Oscuro";
+        if(localStoragePermission)
+            localStorage.setItem("dark-mode", "true");
     }
 });
 
 /* PRACTICE SCRIPT */
+function askCookies(){
+    localStoragePermission = confirm("Esta pagina puede utilizar cockies para el guardado en local de su pasatiempo.");
+}
+
 let http_request = false;
 let dictionary = null;
 let temp_clues = clueTimes;
@@ -134,17 +141,6 @@ function searchClue(){
     document.getElementById('counter').innerHTML = temp_clues;
 }
 
-function readTable(){
-
-    const tableRows = table.rows;
-    console.log(tableRows);
-    for(let i = 0; i < tableRows.length; i++){
-        for(let j = 0; j < tableRows[i].children.length -1 ; j++){
-            console.log(tableRows[i].children[j].children[0].value);
-        }
-    }
-}
-
 function checkWord(row){
     let word = [];
     for(let i = 0; i < table.rows[row].children.length -1; i++){
@@ -220,10 +216,30 @@ function checkDictionary(word) {
 }
 
 function checkPrevious(word, row){
-//TODO
+    let prevWord = [];
+    let flag = [];
+
+    for(let i = 0; i < table.rows[row-1].children.length -1; i++){
+        prevWord.push(table.rows[row-1].children[i].children[0].value.toLowerCase());
+    }
+
+    word = Array.from(word);
+
+    for(let i = 0; i < prevWord.length; i++){
+        for(let j = 0; j < word.length; j++){
+            if(prevWord[i] === word[j]){
+                flag.push(1);
+                break;
+            }
+        }
+        console.log(flag);
+        if(flag.length === (table.rows[row].children.length-2))
+            return true;
+    }
+    return false;
 }
 
-function nextCell(row, pos){
+function moveCell(row, pos){
     if (event.keyCode !== 8) {
         switch (row) {
             case 0: //Next
@@ -257,7 +273,60 @@ function nextCell(row, pos){
                 }
                 break;
         }
+    }else{
+        switch (row) {
+            case 0:
+                if(pos !== 0) {
+                    table.rows[row].children[pos - 1].children[0].focus();
+                    table.rows[row].children[pos - 1].children[0].value = '';
+                }
+                else if (pos === 0)
+                    table.rows[11].children[table.rows[11].children.length-2].children[0].focus();
+                break;
+           default :
+                if (pos !== 0)
+                    table.rows[row].children[pos - 1].children[0].focus();
+                else if (pos === 0)
+                    table.rows[row - 1].children[(table.rows[row-1].children.length)-2].children[0].focus();
+        }
     }
+}
+
+function saves(){
+   if(localStoragePermission){
+       for(let i = 0; i < table.rows.length; i++){
+           let word = [];
+           for(let j = 0; j < table.rows[i].children.length-1; j++){
+               if(table.rows[i].children[j].children[0].value === '')
+                   word.push(' ');
+               word.push(table.rows[i].children[j].children[0].value.toLowerCase());
+           }
+           word = word.join('');
+           localStorage.setItem("row"+i, word);
+       }
+       localStorage.setItem('clue', document.getElementById('counter').value);
+   }else{
+       askCookies();
+   }
+}
+
+function cookies(){
+    askCookies();
+}
+
+function loadSave(){
+
+    for(let i = 0; i < table.rows.length; i++){
+        let word = [];
+        word = Array.from(localStorage.getItem('row'+i).toUpperCase());
+        for(let j = 0; j < table.rows[i].children.length-1; j++){
+            table.rows[i].children[j].children[0].value = word[j];
+        }
+        checkWord(i);
+    }
+
+    document.getElementById('counter').innerHTML = localStorage.getItem('clue');
+    temp_clues = localStorage.getItem('clue');
 }
 
 
